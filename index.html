@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant" data-lang="zh">
   <head>
-    <meta charset="UTF-8" />  
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HAN GALLERY</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -390,6 +390,17 @@
         background: var(--panel-2);
         border: 1px solid var(--line);
       }
+
+	.stat a {
+	  color: inherit;
+	  text-decoration: none;
+	  overflow-wrap: anywhere;
+	  word-break: break-word;
+	}
+
+	.stat a:hover {
+	  text-decoration: underline;
+	}
 
       .stat strong {
         display: block;
@@ -1006,47 +1017,59 @@
         </div>
       </section>
 
-      <section class="section booking" id="booking">
-        <div class="container booking-grid">
-          <div class="booking-copy reveal">
-            <div class="eyebrow" data-i18n="booking_label">預約</div>
-            <h2 data-i18n="booking_title">預約一場私人鑑賞</h2>
-            <p data-i18n="booking_intro">這個表單目前是靜態</p>
-            <div class="stats">
-              <div class="stat">
-                <strong data-i18n="booking_hours">開放時間</strong>
-                <span>Tue — Sun / 11:00 — 19:00</span>
-              </div>
-              <div class="stat">
-                <strong data-i18n="booking_location">地點</strong>
-                <span>Kaohsiung City / Reservation only</span>
-              </div>
-              <div class="stat">
-                <strong data-i18n="booking_contact">聯絡</strong>
-                <span>han3943411@gmail.com</span>
-              </div>
-            </div>
-          </div>
+		<section class="section booking" id="booking">
+		  <div class="container booking-grid">
+			<div class="booking-copy reveal">
+			  <div class="eyebrow" data-i18n="booking_label">預約</div>
+			  <h2 data-i18n="booking_title">預約一場私人鑑賞</h2>
+			  <p data-i18n="booking_intro">請留下您的預約日期與聯絡方式，我們將於確認後主動與您聯繫。</p>
 
-          <div class="booking-form reveal">
-            <form>
-              <input id="fullName" type="text" placeholder="姓名" />
-              <input id="emailAddress" type="email" placeholder="Email" />
-              <input type="date" />
-              <select id="preferredTime">
-                <option>偏好時段</option>
-                <option>11:00</option>
-                <option>13:00</option>
-                <option>15:00</option>
-                <option>17:00</option>
-              </select>
-              <input id="subjectLine" class="full" type="text" placeholder="主題 / 展覽" />
-              <textarea id="messageBox" class="full" placeholder="留言或備註"></textarea>
-              <button id="submitButton" class="btn btn-primary full" type="submit">送出預約</button>
-            </form>
-          </div>
-        </div>
-      </section>
+			  <div class="stats">
+				<div class="stat">
+				  <strong data-i18n="booking_hours">開放時間</strong>
+				  <span>Tue — Sun / 11:00 — 19:00</span>
+				</div>
+
+				<div class="stat">
+				  <strong data-i18n="booking_location">地點</strong>
+				  <span>Kaohsiung City / Reservation only</span>
+				</div>
+
+				<div class="stat">
+				  <strong data-i18n="booking_email_label">郵箱</strong>
+				  <span>
+					<a href="mailto:han3943411@gmail.com">han3943411@gmail.com</a>
+				  </span>
+				</div>
+
+				<div class="stat">
+				  <strong data-i18n="booking_phone_label">聯絡</strong>
+				  <span>
+					<a href="tel:+886933943411" data-i18n="booking_phone_value">0933943411</a>
+				  </span>
+				</div>
+			  </div>
+			</div>
+
+			<div class="booking-form reveal">
+			  <form>
+				<input id="fullName" type="text" placeholder="姓名" />
+				<input id="emailAddress" type="email" placeholder="Email" />
+				<input type="date" />
+				<select id="preferredTime">
+				  <option>偏好時段</option>
+				  <option>11:00</option>
+				  <option>13:00</option>
+				  <option>15:00</option>
+				  <option>17:00</option>
+				</select>
+				<input id="subjectLine" class="full" type="text" placeholder="主題 / 展覽" />
+				<textarea id="messageBox" class="full" placeholder="留言或備註"></textarea>
+				<button id="submitButton" class="btn btn-primary full" type="submit">送出預約</button>
+			  </form>
+			</div>
+		  </div>
+		</section>
     </main>
 
     <footer class="footer">
@@ -1137,7 +1160,9 @@
 		booking_intro: "請留下您的預約日期與聯絡方式，我們將於確認後主動與您聯繫。",
 		booking_hours: "開放時間",
 		booking_location: "地點",
-		booking_contact: "聯絡",
+		booking_email_label: "郵箱",
+		booking_phone_label: "聯絡",
+		booking_phone_value: "0933943411",
 
 		footer_left: "HAN GALLERY — 為私人鑑賞與策展展示而設計。",
 		footer_right: "Facebook · 聯絡 · 預約制",
@@ -1195,7 +1220,9 @@
 		booking_intro: "Please leave your preferred date and contact details. We will confirm your reservation with you directly.",
 		booking_hours: "Hours",
 		booking_location: "Location",
-		booking_contact: "Contact",
+		booking_email_label: "Email",
+		booking_phone_label: "Phone",
+		booking_phone_value: "(+886)933943411",
 
 		footer_left: "HAN GALLERY — Designed for private viewing and curated presentation.",
 		footer_right: "Facebook · Contact · Reservation only",
@@ -1253,7 +1280,9 @@
 		booking_intro: "ご希望日時とご連絡先をご記入ください。確認後、こちらからご連絡いたします。",
 		booking_hours: "営業時間",
 		booking_location: "所在地",
-		booking_contact: "連絡先",
+		booking_email_label: "メール",
+		booking_phone_label: "電話",
+		booking_phone_value: "(+886)933943411",
 
 		footer_left: "HAN GALLERY — プライベートビューイングとキュレーション展示のためのデザイン。",
 		footer_right: "Facebook · お問い合わせ · 完全予約制",
