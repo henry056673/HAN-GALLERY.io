@@ -1453,17 +1453,16 @@
 	document.querySelector("form").addEventListener("submit", async (event) => {
 	  event.preventDefault();
 
-	  const payload = {
+	  const payload = new URLSearchParams({
 		fullName: fullName.value.trim(),
 		emailAddress: emailAddress.value.trim(),
 		preferredDate: preferredDate.value,
 		preferredTime: preferredTime.value,
 		subjectLine: subjectLine.value.trim(),
-		messageBox: messageBox.value.trim(),
-		submittedAt: new Date().toISOString()
-	  };
+		messageBox: messageBox.value.trim()
+	  });
 
-	  if (!payload.fullName || !payload.emailAddress || !payload.preferredDate || !payload.preferredTime) {
+	  if (!fullName.value.trim() || !emailAddress.value.trim() || !preferredDate.value || !preferredTime.value) {
 		alert("請先填寫姓名、Email、日期與時段");
 		return;
 	  }
@@ -1473,9 +1472,9 @@
 		  method: "POST",
 		  mode: "no-cors",
 		  headers: {
-			"Content-Type": "application/json"
+			"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
 		  },
-		  body: JSON.stringify(payload)
+		  body: payload.toString()
 		});
 
 		alert(translations[document.documentElement.dataset.lang].alert_text);
