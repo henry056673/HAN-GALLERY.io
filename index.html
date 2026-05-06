@@ -811,7 +811,7 @@
               <div class="hero-shade"></div>
             </div>
             <div class="hero-slide">
-              <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1800&q=80" alt="Gallery hero two" loading="lazy" />
+              <img src="./VIVO.jpg" alt="Gallery hero two" loading="lazy" />
               <div class="hero-shade"></div>
             </div>
             <div class="hero-slide">
@@ -998,7 +998,7 @@
               </div>
             </article>
             <article class="news-card reveal">
-              <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1000&q=80" alt="News two" />
+              <img src="./VIVO.jpg" alt="News two" />
               <div class="card-body">
                 <div class="eyebrow">Feature</div>
                 <h3>New collection preview now open for reservation.</h3>
@@ -1006,7 +1006,7 @@
               </div>
             </article>
             <article class="news-card reveal">
-              <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=80" alt="News three" />
+              <img src="./LOGO.jpg" alt="News three" />
               <div class="card-body">
                 <div class="eyebrow">Editorial</div>
                 <h3>Why slower viewing changes the way art is remembered.</h3>
@@ -1027,7 +1027,7 @@
 			  <div class="stats">
 				<div class="stat">
 				  <strong data-i18n="booking_hours">開放時間</strong>
-				  <span>Tue — Sun / 11:00 — 19:00</span>
+				  <span>Sat — Sun / 10:00 — 15:00</span>
 				</div>
 
 				<div class="stat">
@@ -1055,13 +1055,11 @@
 			  <form>
 				<input id="fullName" type="text" placeholder="姓名" />
 				<input id="emailAddress" type="email" placeholder="Email" />
-				<input type="date" />
+				<input id="preferredDate" type="date" />
 				<select id="preferredTime">
 				  <option>偏好時段</option>
-				  <option>11:00</option>
-				  <option>13:00</option>
-				  <option>15:00</option>
-				  <option>17:00</option>
+				  <option>10:00</option>
+				  <option>13:30</option>
 				</select>
 				<input id="subjectLine" class="full" type="text" placeholder="主題 / 展覽" />
 				<textarea id="messageBox" class="full" placeholder="留言或備註"></textarea>
@@ -1100,6 +1098,7 @@
       const subjectLine = document.getElementById("subjectLine");
       const messageBox = document.getElementById("messageBox");
       const submitButton = document.getElementById("submitButton");
+	  const preferredDate = document.getElementById("preferredDate");
 
       let currentSlide = 0;
       let slideTimer = null;
@@ -1451,10 +1450,41 @@
         navbar.classList.toggle("scrolled", window.scrollY > 24);
       });
 
-      document.querySelector("form").addEventListener("submit", (event) => {
-        event.preventDefault();
-        alert(translations[document.documentElement.dataset.lang].alert_text);
-      });
+	document.querySelector("form").addEventListener("submit", async (event) => {
+	  event.preventDefault();
+
+	  const payload = {
+		fullName: fullName.value.trim(),
+		emailAddress: emailAddress.value.trim(),
+		preferredDate: preferredDate.value,
+		preferredTime: preferredTime.value,
+		subjectLine: subjectLine.value.trim(),
+		messageBox: messageBox.value.trim(),
+		submittedAt: new Date().toISOString()
+	  };
+
+	  if (!payload.fullName || !payload.emailAddress || !payload.preferredDate || !payload.preferredTime) {
+		alert("請先填寫姓名、Email、日期與時段");
+		return;
+	  }
+
+	  try {
+		await fetch("https://script.google.com/macros/s/AKfycbxZswbcONRTA_siQfLNa9eSt5y6aqML4Tc0CzUxX_gaLm-y67dE2BoTpheGjRGxCloh/exec", {
+		  method: "POST",
+		  mode: "no-cors",
+		  headers: {
+			"Content-Type": "application/json"
+		  },
+		  body: JSON.stringify(payload)
+		});
+
+		alert(translations[document.documentElement.dataset.lang].alert_text);
+		event.target.reset();
+	  } catch (error) {
+		console.error(error);
+		alert("送出失敗，請稍後再試");
+	  }
+	});
 
       setLanguage("zh");
       counters.forEach((counter) => {
