@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HAN GALLERY</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="favicon.png" />
-<style>
+    <style>
       :root {
         --bg: #0d0d0d;
         --panel: #141414;
@@ -22,19 +22,13 @@
         --radius-md: 22px;
         --radius-sm: 16px;
         --gutter: clamp(14px, 3vw, 24px);
-        --section-space: clamp(72px, 10vw, 108px);
+        --section-space: clamp(56px, 8vw, 96px);
         --app-height: 100svh;
         --hero-height: calc(var(--app-height) - 96px);
       }
 
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         font-family: "Segoe UI", "Noto Sans TC", "Noto Sans JP", sans-serif;
@@ -44,23 +38,9 @@
         overflow-x: hidden;
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img,
-      video {
-        display: block;
-        max-width: 100%;
-      }
-
-      button,
-      input,
-      textarea,
-      select {
-        font: inherit;
-      }
+      a { color: inherit; text-decoration: none; }
+      img, video { display: block; max-width: 100%; }
+      button, input, textarea, select { font: inherit; }
 
       .container {
         width: min(calc(100% - (var(--gutter) * 2)), var(--max));
@@ -82,14 +62,14 @@
         border-bottom-color: var(--line);
       }
 
-      .nav-inner {
-        min-height: 68px;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 12px;
-        padding: 12px 0;
-      }
+	.nav-inner {
+	  min-height: 68px;
+	  display: grid;
+	  grid-template-columns: auto 1fr auto;
+	  align-items: center;
+	  gap: 12px;
+	  padding: 12px 0;
+	}
 
       .brand {
         min-width: 0;
@@ -101,21 +81,23 @@
         text-overflow: ellipsis;
       }
 
-      .nav-links {
-        display: none;
-        gap: 22px;
-        color: var(--muted);
-        font-size: 0.95rem;
-        flex-wrap: wrap;
-      }
+	.nav-inner {
+	  min-height: 68px;
+	  display: grid;
+	  grid-template-columns: auto 1fr auto;
+	  align-items: center;
+	  gap: 12px;
+	  padding: 12px 0;
+	}
 
-      .nav-right {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 8px;
-        min-width: 0;
-      }
+	.nav-inner {
+	  min-height: 68px;
+	  display: grid;
+	  grid-template-columns: auto 1fr auto;
+	  align-items: center;
+	  gap: 12px;
+	  padding: 12px 0;
+	}
 
       .lang-switch {
         display: inline-flex;
@@ -154,10 +136,7 @@
         white-space: nowrap;
       }
 
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
+      .btn:hover { transform: translateY(-2px); }
       .btn-primary {
         background: var(--accent);
         border-color: transparent;
@@ -182,10 +161,7 @@
         cursor: grab;
       }
 
-      .hero-stage.is-dragging {
-        cursor: grabbing;
-      }
-
+      .hero-stage.is-dragging { cursor: grabbing; }
       .hero-slide {
         position: absolute;
         inset: 0;
@@ -224,7 +200,7 @@
       }
 
       .hero-copy {
-        width: min(100%, 720px);
+        width: min(100%, 760px);
         max-width: 100%;
       }
 
@@ -243,10 +219,27 @@
         letter-spacing: -0.04em;
       }
 
+      h2 {
+        margin: 0 0 10px;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        line-height: 1.02;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-copy p,
+      .section-intro,
+      .booking-copy p,
+      .stat span,
+      .booking-helper,
+      .inline-note,
+      .footer-inner {
+        color: var(--muted);
+      }
+
       .hero-copy p {
         max-width: 38rem;
         margin: 0;
-        color: #ddd1c1;
         font-size: clamp(0.92rem, 2.4vw, 1.05rem);
       }
 
@@ -257,9 +250,7 @@
         margin-top: 20px;
       }
 
-      .hero-actions .btn {
-        width: 100%;
-      }
+      .hero-actions .btn { width: 100%; }
 
       .hero-meta {
         display: grid;
@@ -268,13 +259,9 @@
         margin-top: 18px;
         padding-top: 18px;
         padding-bottom: 56px;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        border-top: 1px solid rgba(255,255,255,0.12);
         color: var(--muted);
         font-size: 0.94rem;
-      }
-
-      .hero-meta span {
-        min-width: 0;
       }
 
       .hero-pager {
@@ -287,10 +274,10 @@
         gap: 8px;
         padding: 8px 10px;
         border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(10, 10, 10, 0.42);
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(10,10,10,0.42);
         backdrop-filter: blur(18px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.18);
       }
 
       .hero-dot {
@@ -300,7 +287,7 @@
         padding: 0;
         border: 0;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.24);
+        background: rgba(255,255,255,0.24);
         cursor: pointer;
         opacity: 0.85;
         transition: width 0.28s ease, opacity 0.28s ease, background 0.28s ease;
@@ -311,7 +298,7 @@
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(230, 216, 197, 0.92));
+        background: linear-gradient(90deg, rgba(255,255,255,0.92), rgba(230,216,197,0.92));
         opacity: 0;
         transition: opacity 0.28s ease;
       }
@@ -319,69 +306,34 @@
       .hero-dot.active {
         width: 32px;
         opacity: 1;
-        background: rgba(255, 255, 255, 0.12);
+        background: rgba(255,255,255,0.12);
       }
 
-      .hero-dot.active::after {
-        opacity: 1;
-      }
+      .hero-dot.active::after { opacity: 1; }
 
       .section {
         padding: var(--section-space) 0;
       }
 
-      .section-head {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-        margin-bottom: 32px;
-      }
-
-      .section-head h2 {
-        margin: 0;
-        font-size: clamp(2rem, 6vw, 3.5rem);
-        font-weight: 500;
-        letter-spacing: -0.03em;
-      }
-
-      .section-head p {
-        max-width: 100%;
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .about-grid,
-      .booking-grid,
-      .exhibitions-grid,
-      .news-grid {
+      .booking-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 18px;
-        min-width: 0;
       }
 
-      .panel,
       .booking-copy,
-      .booking-form,
-      .exhibition-card,
-      .news-card {
+      .booking-form {
         background: var(--panel);
         border: 1px solid var(--line);
         border-radius: var(--radius-md);
-      }
-
-      .panel,
-      .booking-copy,
-      .booking-form {
         padding: clamp(20px, 4vw, 30px);
       }
 
       .stats {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 14px;
-        margin-top: 24px;
+        margin-top: 22px;
       }
 
       .stat {
@@ -391,141 +343,14 @@
         border: 1px solid var(--line);
       }
 
-	.stat a {
-	  color: inherit;
-	  text-decoration: none;
-	  overflow-wrap: anywhere;
-	  word-break: break-word;
-	}
-
-	.stat a:hover {
-	  text-decoration: underline;
-	}
-
       .stat strong {
         display: block;
         margin-bottom: 6px;
-        font-size: clamp(1.35rem, 4vw, 1.6rem);
-        word-break: break-word;
+        font-size: 1.04rem;
       }
 
-      .stat span,
-      .panel p,
-      .booking-copy p,
-      .card-body p,
-      .booking-copy span {
-        overflow-wrap: anywhere;
-        word-break: break-word;
-      }
-
-      .counter {
-        opacity: 0.35;
-        transform: translateY(10px);
-        transition: opacity 0.45s ease, transform 0.45s ease;
-      }
-
-      .gallery-track {
-        display: grid;
-        gap: 18px;
-      }
-
-      .gallery-card {
-        position: relative;
-        top: 0;
-        min-height: 62vh;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-      }
-
-      .gallery-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .gallery-overlay {
-        position: absolute;
-        inset: auto 0 0 0;
-        padding: 28px;
-        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.76));
-      }
-
-      .gallery-overlay h3,
-      .exhibition-card h3,
-      .news-card h3 {
-        margin: 0 0 8px;
-        font-size: 1.5rem;
-        font-weight: 500;
-      }
-
-      .gallery-overlay p,
-      .exhibition-card p,
-      .news-card p,
-      .booking-copy p,
-      .footer p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .exhibition-card,
-      .news-card {
-        overflow: hidden;
-        transition: 0.3s ease;
-      }
-
-      .exhibition-card:hover,
-      .news-card:hover {
-        transform: translateY(-6px);
-      }
-
-      .exhibition-card img,
-      .news-card img {
-        aspect-ratio: 1 / 0.9;
-        object-fit: cover;
-      }
-
-      .card-body {
-        padding: 22px;
-      }
-
-      .video-band {
-        position: relative;
-        min-height: 70vh;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 28px;
-      }
-
-      .video-band video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .video-content {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        padding: 24px;
-        text-align: center;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.58));
-      }
-
-      .play-button {
-        width: 82px;
-        height: 82px;
-        display: grid;
-        place-items: center;
-        margin: 0 auto 18px;
-        border: 1px solid rgba(255, 255, 255, 0.34);
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(10px);
-        font-size: 1.6rem;
-      }
+      .stat a { text-decoration: none; }
+      .stat a:hover { text-decoration: underline; }
 
       .booking-form form {
         display: grid;
@@ -533,8 +358,16 @@
         gap: 14px;
       }
 
-      .booking-form .full {
-        grid-column: auto;
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field.full { grid-column: 1 / -1; }
+
+      .field label {
+        font-size: 0.95rem;
+        color: var(--text);
       }
 
       input,
@@ -549,8 +382,20 @@
       }
 
       textarea {
-        min-height: 130px;
+        min-height: 120px;
         resize: vertical;
+      }
+
+      .inline-note {
+        font-size: 0.9rem;
+        margin-top: -4px;
+      }
+
+      .booking-helper {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.95rem;
       }
 
       .footer {
@@ -562,18 +407,12 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        color: var(--muted);
       }
 
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: 0.8s ease;
-      }
-
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
+      .anchor-offset {
+        position: relative;
+        top: -82px;
+        height: 0;
       }
 
       @media (min-width: 700px) {
@@ -590,10 +429,6 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .booking-form .full {
-          grid-column: 1 / -1;
-        }
-
         .footer-inner {
           flex-direction: row;
           justify-content: space-between;
@@ -601,28 +436,17 @@
         }
       }
 
-      @media (min-width: 900px) and (max-width: 1399px) {
-        .nav-inner {
-          grid-template-columns: auto 1fr auto;
-          gap: 16px;
-          padding: 14px 0;
-        }
+		@media (min-width: 900px) and (max-width: 1399px) {
+		  .nav-inner {
+			grid-template-columns: auto 1fr auto;
+			gap: 16px;
+			padding: 14px 0;
+		  }
 
-        .nav-links {
-          display: flex;
-          justify-content: center;
-          gap: 16px;
-          font-size: 0.9rem;
-        }
-
-        .lang-btn {
-          min-width: 44px;
-          padding: 9px 11px;
-        }
-
-        .btn {
-          padding: 12px 18px;
-        }
+		  .nav-links {
+			min-width: 0;
+			min-height: 1px;
+		  }
 
         .hero {
           padding-top: 86px;
@@ -634,13 +458,9 @@
           padding: 36px;
         }
 
-        .hero-copy {
-          width: min(700px, 92%);
-        }
+        .hero-copy { width: min(700px, 92%); }
 
-        h1 {
-          font-size: clamp(3.1rem, 5vw, 4.8rem);
-        }
+        h1 { font-size: clamp(3.1rem, 5vw, 4.8rem); }
 
         .hero-copy p {
           max-width: 34rem;
@@ -664,39 +484,23 @@
           bottom: 22px;
         }
 
-        .about-grid,
         .booking-grid {
-          grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+          grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
           gap: 24px;
-        }
-
-        .exhibitions-grid,
-        .news-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 18px;
         }
       }
 
-      @media (min-width: 1400px) {
-        .nav-inner {
-          grid-template-columns: auto 1fr auto;
-          gap: 24px;
-          padding: 16px 0;
-        }
+		@media (min-width: 1400px) {
+		  .nav-inner {
+			grid-template-columns: auto 1fr auto;
+			gap: 24px;
+			padding: 16px 0;
+		  }
 
-        .nav-links {
-          display: flex;
-          justify-content: center;
-        }
-
-        .lang-btn {
-          min-width: 48px;
-          padding: 10px 12px;
-        }
-
-        .btn {
-          padding: 14px 22px;
-        }
+		  .nav-links {
+			min-width: 0;
+			min-height: 1px;
+		  }
 
         .hero {
           padding-top: 92px;
@@ -708,17 +512,9 @@
           padding: clamp(24px, 4vw, 48px);
         }
 
-        .hero-copy {
-          width: min(680px, 88%);
-        }
-
-        h1 {
-          font-size: clamp(3.4rem, 5.4vw, 5.6rem);
-        }
-
-        .hero-copy p {
-          font-size: 1rem;
-        }
+        .hero-copy { width: min(680px, 88%); }
+        h1 { font-size: clamp(3.4rem, 5.4vw, 5.6rem); }
+        .hero-copy p { font-size: 1rem; }
 
         .hero-meta {
           display: flex;
@@ -739,38 +535,58 @@
           padding: 10px 12px;
         }
 
-        .hero-dot.active {
-          width: 42px;
-        }
-
-        .section-head {
-          flex-direction: row;
-          align-items: end;
-          justify-content: space-between;
-        }
-
-        .section-head p {
-          max-width: 34rem;
-        }
-
-        .about-grid,
+        .hero-dot.active { width: 42px; }
         .booking-grid {
-          grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+          grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
           gap: 28px;
         }
-
-        .exhibitions-grid,
-        .news-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 22px;
-        }
-
-        .gallery-card {
-          position: sticky;
-          top: 110px;
-          min-height: 82vh;
-        }
       }
+	  
+		.field-label {
+		  display: flex;
+		  align-items: center;
+		  gap: 10px;
+		  font-weight: 600;
+		}
+
+		.field-note {
+		  font-size: 0.9rem;
+		  font-weight: 400;
+		  color: var(--muted);
+		}
+		
+		.hero-pager {
+		  position: absolute;
+		  right: 28px;
+		  bottom: 28px;
+		  z-index: 5;
+		  pointer-events: auto;
+		}
+
+		.hero-dot {
+		  pointer-events: auto;
+		  cursor: pointer;
+		}
+
+		.note-under-label {
+		  margin-top: -2px;
+		  margin-bottom: 6px;
+		}
+
+		.stat-wide {
+		  grid-column: 1 / -1;
+		}
+
+		.stat span a {
+		  color: inherit;
+		  text-decoration: none;
+		  overflow-wrap: anywhere;
+		  word-break: break-word;
+		}
+
+		.stat span a:hover {
+		  text-decoration: underline;
+		}
 
       @media (max-width: 560px) {
         .nav-right .btn {
@@ -778,19 +594,22 @@
           font-size: 0.88rem;
         }
       }
+	  
+	 @media (max-width: 640px) {
+		.field-label {
+		  flex-direction: column;
+		  align-items: flex-start;
+		  gap: 4px;
+	    }
+	  }
     </style>
   </head>
   <body>
     <header class="nav" id="navbar">
       <div class="container nav-inner">
         <a class="brand" href="#top">HAN GALLERY</a>
-        <nav class="nav-links">
-          <a href="#about" data-i18n="nav_about">關於</a>
-          <a href="#gallery" data-i18n="nav_gallery">畫廊</a>
-          <a href="#exhibitions" data-i18n="nav_exhibitions">展覽</a>
-          <a href="#news" data-i18n="nav_news">最新消息</a>
-          <a href="#booking" data-i18n="nav_booking">預約</a>
-        </nav>
+
+        <nav class="nav-links" aria-hidden="true"></nav>
         <div class="nav-right">
           <div class="lang-switch" aria-label="Language switcher">
             <button class="lang-btn active" data-lang-switch="zh" type="button">中</button>
@@ -803,7 +622,7 @@
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="container">
           <div class="hero-stage">
             <div class="hero-slide active">
@@ -815,290 +634,176 @@
               <div class="hero-shade"></div>
             </div>
             <div class="hero-slide">
-              <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80">
-                <source src="https://cdn.coverr.co/videos/coverr-art-gallery-1564312677662?download=1080p" type="video/mp4" />
-              </video>
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80" alt="Gallery hero three" loading="lazy" />
+              <div class="hero-shade"></div>
+            </div>
+			<div class="hero-slide">
+              <img src="./2.png" alt="Gallery hero three" loading="lazy" />
               <div class="hero-shade"></div>
             </div>
 
             <div class="hero-content">
               <div class="hero-copy">
-                <div class="eyebrow" data-i18n="hero_eyebrow">私人鑑賞 · 精選體驗</div>
+                <div class="eyebrow" data-i18n="hero_eyebrow">私人鑑賞・精選體驗</div>
                 <h1 data-i18n="hero_title">讓藝術、空間與靜謐在此相遇。</h1>
-                <p data-i18n="hero_desc">這是一個帶有編輯感節奏、沉浸式視覺與精緻預約流程的畫廊首頁骨架，適合藝術作品、展覽、私人鑑賞與高質感品牌展示。</p>
+                <p data-i18n="hero_desc">HAN GALLERY 以沉靜的空間節奏與精選作品呈現當代藝術，現在可直接填寫線上預約表單，我們將依預約資訊與您確認參觀時段。</p>
                 <div class="hero-actions">
-                  <a class="btn btn-primary" href="#booking" data-i18n="hero_cta_primary">預約參觀</a>
-                  <a class="btn" href="#gallery" data-i18n="hero_cta_secondary">瀏覽藏品</a>
+                  <a class="btn btn-primary" href="#booking" data-i18n="hero_cta_primary">立即預約</a>
+                  <a class="btn" href="#booking" data-i18n="hero_cta_secondary">查看預約資訊</a>
                 </div>
                 <div class="hero-meta">
-                  <span data-i18n="hero_meta_1">高雄 · 預約制</span>
-                  <span data-i18n="hero_meta_2">季節性展覽</span>
-                  <span data-i18n="hero_meta_3">私人導覽</span>
+                  <span data-i18n="hero_meta_1">高雄・預約制</span>
+                  <span data-i18n="hero_meta_2">週六、週日開放</span>
+                  <span data-i18n="hero_meta_3">09:30 / 10:30 / 13:00</span>
                 </div>
               </div>
             </div>
 
-            <div class="hero-pager" aria-label="Hero pager">
-              <button class="hero-dot active" data-slide="0" type="button" aria-label="Slide 1"></button>
-              <button class="hero-dot" data-slide="1" type="button" aria-label="Slide 2"></button>
-              <button class="hero-dot" data-slide="2" type="button" aria-label="Slide 3"></button>
-            </div>
+			<div class="hero-pager" aria-label="Hero pager">
+			  <button class="hero-dot active" data-slide="0" type="button" aria-label="Slide 1"></button>
+			  <button class="hero-dot" data-slide="1" type="button" aria-label="Slide 2"></button>
+			  <button class="hero-dot" data-slide="2" type="button" aria-label="Slide 3"></button>
+			  <button class="hero-dot" data-slide="3" type="button" aria-label="Slide 4"></button>
+			</div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <div class="eyebrow" data-i18n="about_label">關於</div>
-              <h2 data-i18n="about_title">用更安靜的方式體驗當代藝術。</h2>
-            </div>
-            <p data-i18n="about_intro">此首頁適合畫廊、展覽空間、高端展示間與預約制場域，重點在於圖片節奏、控制感與自然導向預約。</p>
-          </div>
+      <div class="anchor-offset" id="booking"></div>
+      <section class="section booking">
+        <div class="container booking-grid">
+          <div class="booking-copy">
+            
+            <h2 data-i18n="booking_title">線上預約</h2>
+            <p class="section-intro" data-i18n="booking_intro">請填寫主要聯絡人資料、參觀人數與預約時段。若無 Email，請於 Email / 身分證字號欄填寫身分證字號。</p>
 
-          <div class="about-grid">
-            <div class="panel reveal">
-              <p data-i18n="about_body_1">這裡可以放你的畫廊理念、策展敘述，或是一段簡短品牌故事。文字不用太多，讓畫面與空間氛圍自己說話。</p>
-              <div class="stats">
-                <div class="stat">
-                  <strong class="counter" data-counter-target="12" data-counter-suffix="+">0</strong>
-                  <span data-i18n="stat_artists">合作藝術家</span>
-                </div>
-                <div class="stat">
-                  <strong class="counter" data-counter-target="4" data-counter-prefix="0">00</strong>
-                  <span data-i18n="stat_rooms">當期展區</span>
-                </div>
-                <div class="stat">
-                  <strong data-i18n="stat_access_value">私人參觀</strong>
-                  <span data-i18n="stat_access">私人參觀</span>
-                </div>
+            <div class="stats">
+              <div class="stat">
+                <strong data-i18n="booking_hours">開放時間</strong>
+                <span data-i18n="booking_hours_value">週六、週日 / 09:30 起，看到展覽結束為止</span>
               </div>
-            </div>
-            <div class="panel reveal">
-              <p data-i18n="about_body_2">你也可以放創辦理念、展覽意圖、收藏亮點或空間故事，讓網站維持高級感而不流於企業官網。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="gallery">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <div class="eyebrow" data-i18n="gallery_label">精選藏品</div>
-              <h2 data-i18n="gallery_title">用滑動的方式瀏覽分層視覺敘事。</h2>
-            </div>
-            <p data-i18n="gallery_intro">這段採用堆疊式 sticky 面板，滾動時比一般圖片格更有沉浸感，也更接近畫廊首頁該有的節奏。</p>
-          </div>
-
-          <div class="gallery-track">
-            <article class="gallery-card reveal">
-              <img src="./廊道.png" alt="Artwork one" />
-              <div class="gallery-overlay">
-                <div class="eyebrow">Collection I</div>
-                <h3>Echoes in Limestone</h3>
-                <p>Stone, silence, soft shadow, and sculptural restraint.</p>
+              <div class="stat">
+                <strong data-i18n="booking_time_slots">可選時段</strong>
+                <span data-i18n="booking_time_slots_value">09:30 / 10:30 / 13:00</span>
               </div>
-            </article>
-            <article class="gallery-card reveal">
-              <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1600&q=80" alt="Artwork two" />
-              <div class="gallery-overlay">
-                <div class="eyebrow">Collection II</div>
-                <h3>Spatial Intervals</h3>
-                <p>Architectural rhythm and suspended perspective.</p>
+              <div class="stat">
+                <strong data-i18n="booking_location">地點</strong>
+                <span data-i18n="booking_location_value">Kaohsiung City / Reservation only</span>
               </div>
-            </article>
-            <article class="gallery-card reveal">
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80" alt="Artwork three" />
-              <div class="gallery-overlay">
-                <div class="eyebrow">Collection III</div>
-                <h3>Dark Field Study</h3>
-                <p>Textural contrast, mineral surfaces, and controlled depth.</p>
+              <div class="stat">
+                <strong data-i18n="booking_phone_label">聯絡電話</strong>
+                <span><a href="tel:+886933943411">0933943411</a></span>
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="exhibitions">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <div class="eyebrow" data-i18n="exhibitions_label">展覽</div>
-              <h2 data-i18n="exhibitions_title">當期與即將到來的展示。</h2>
-            </div>
-            <p data-i18n="exhibitions_intro">這裡可放目前展覽、私人活動、限量發表，或藝術家專屬展間。</p>
-          </div>
-
-          <div class="exhibitions-grid">
-            <article class="exhibition-card reveal">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80" alt="Exhibition one" />
-              <div class="card-body">
-                <div class="eyebrow">12 Apr — 28 Jun</div>
-                <h3>Silent Geometry</h3>
-                <p>A study in measured light, mass, and visual restraint.</p>
-              </div>
-            </article>
-            <article class="exhibition-card reveal">
-              <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80" alt="Exhibition two" />
-              <div class="card-body">
-                <div class="eyebrow">03 Jul — 18 Aug</div>
-                <h3>Human Surface</h3>
-                <p>Portrait fragments, abstraction, and unfinished memory.</p>
-              </div>
-            </article>
-            <article class="exhibition-card reveal">
-              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80" alt="Exhibition three" />
-              <div class="card-body">
-                <div class="eyebrow">By Invitation</div>
-                <h3>Private Collectors Room</h3>
-                <p>Reserved access for select appointments and guided previews.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="video-band reveal">
-            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80">
-              <source src="./video_20260416_215027.mp4" type="video/mp4" />
-            </video>
-            <div class="video-content">
-              <div>
-                <div class="play-button">▶</div>
-                <div class="eyebrow">Immersive Film</div>
-                <h2>Inside the atmosphere of the space.</h2>
-                <p>Embed your video here with YouTube or Vimeo later.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="news">
-        <div class="container">
-          <div class="section-head reveal">
-            <div>
-              <div class="eyebrow" data-i18n="news_label">最新消息</div>
-              <h2 data-i18n="news_title">公告、發佈與編輯式短訊。</h2>
-            </div>
-            <p data-i18n="news_intro">首頁的最新消息建議保持精簡，放兩到三則就足夠。</p>
-          </div>
-
-          <div class="news-grid">
-            <article class="news-card reveal">
-              <img src="https://images.unsplash.com/photo-1459908676235-d5f02a50184b?auto=format&fit=crop&w=1000&q=80" alt="News one" />
-              <div class="card-body">
-                <div class="eyebrow">Announcement</div>
-                <h3>Extended viewing hours for private appointments.</h3>
-                <p>Evening reservations are now available on selected dates.</p>
-              </div>
-            </article>
-            <article class="news-card reveal">
-              <img src="./VIVO.jpg" alt="News two" />
-              <div class="card-body">
-                <div class="eyebrow">Feature</div>
-                <h3>New collection preview now open for reservation.</h3>
-                <p>A limited-access curation focused on material texture and light.</p>
-              </div>
-            </article>
-            <article class="news-card reveal">
-              <img src="./LOGO.jpg" alt="News three" />
-              <div class="card-body">
-                <div class="eyebrow">Editorial</div>
-                <h3>Why slower viewing changes the way art is remembered.</h3>
-                <p>A short note on atmosphere, pacing, and visual attention.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-		<section class="section booking" id="booking">
-		  <div class="container booking-grid">
-			<div class="booking-copy reveal">
-			  <div class="eyebrow" data-i18n="booking_label">預約</div>
-			  <h2 data-i18n="booking_title">預約一場私人鑑賞</h2>
-			  <p data-i18n="booking_intro">請留下您的預約日期與聯絡方式，我們將於確認後主動與您聯繫。</p>
-
-			  <div class="stats">
-				<div class="stat">
-				  <strong data-i18n="booking_hours">開放時間</strong>
-				  <span>Sat — Sun / 10:00 — 15:00</span>
-				</div>
-
-				<div class="stat">
-				  <strong data-i18n="booking_location">地點</strong>
-				  <span>Kaohsiung City / Reservation only</span>
-				</div>
-
-				<div class="stat">
-				  <strong data-i18n="booking_email_label">郵箱</strong>
-				  <span>
-					<a href="mailto:han3943411@gmail.com">han3943411@gmail.com</a>
-				  </span>
-				</div>
-
-				<div class="stat">
-				  <strong data-i18n="booking_phone_label">聯絡</strong>
-				  <span>
-					<a href="tel:+886933943411" data-i18n="booking_phone_value">0933943411</a>
-				  </span>
-				</div>
+			  <div class="stat stat-wide">
+				<strong data-i18n="contact_email_label">聯絡郵箱</strong>
+				<span><a href="mailto:han3943411@gmail.com">han3943411@gmail.com</a></span>
 			  </div>
-			</div>
+            </div>
 
-			<div class="booking-form reveal">
-			  <form>
-				<input id="fullName" type="text" placeholder="姓名" />
-				<input id="emailAddress" type="email" placeholder="Email" />
+            <p class="booking-helper" data-i18n="booking_helper">若無法完成線上預約，請直接聯繫畫廊。</p>
+          </div>
+
+          <div class="booking-form">
+            <form id="bookingForm">
+              <div class="field">
+                <label for="fullName" data-i18n="label_name">姓名</label>
+                <input id="fullName" type="text" required />
+              </div>
+              <div class="field">
+                <label for="phoneNumber" data-i18n="label_phone">聯絡電話</label>
+                <input id="phoneNumber" type="tel" inputmode="tel" required />
+              </div>
+              <div class="field full">
+				<label for="emailOrId" class="field-label">
+				  <span data-i18n="label_email_or_id">Email / 身分證字號</span>
+				  <span class="field-note" data-i18n="field_note_email_or_id">若無 Email，請填寫身分證字號。</span>
+				</label>
+				<input id="emailOrId" type="text" />
+              </div>
+              <div class="field">
+                <label for="partySize" data-i18n="label_party_size">預約人數</label>
+                <select id="partySize" required>
+                  <option value="" data-i18n="option_choose">請選擇</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6+">6+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="gender" data-i18n="label_gender">預約人性別</label>
+                <select id="gender" required>
+                  <option value="" data-i18n="option_choose">請選擇</option>
+                  <option value="男" data-i18n="gender_male">男</option>
+                  <option value="女" data-i18n="gender_female">女</option>
+                  <option value="其他" data-i18n="gender_other">其他</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ageRange" data-i18n="label_age_range">年齡區間</label>
+                <select id="ageRange" required>
+                  <option value="" data-i18n="option_choose">請選擇</option>
+                  <option value="20~40">20~40</option>
+                  <option value="40~60">40~60</option>
+                  <option value="60+">60+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="preferredDate" class="field-label">
+				  預約日期 <span class="field-note">僅開放週六、週日預約。</span>
+				</label>
 				<input id="preferredDate" type="date" />
-				<select id="preferredTime">
-				  <option>偏好時段</option>
-				  <option>10:00</option>
-				  <option>13:30</option>
-				</select>
-				<input id="subjectLine" class="full" type="text" placeholder="主題 / 展覽" />
-				<textarea id="messageBox" class="full" placeholder="留言或備註"></textarea>
-				<button id="submitButton" class="btn btn-primary full" type="submit">送出預約</button>
-			  </form>
-			</div>
-		  </div>
-		</section>
+              </div>
+              <div class="field">
+                <label for="preferredTime" data-i18n="label_time">預約時段</label>
+                <select id="preferredTime" required>
+                  <option value="" data-i18n="option_choose">請選擇</option>
+                  <option value="09:30">09:30</option>
+                  <option value="10:30">10:30</option>
+                  <option value="13:00">13:00</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="messageBox" data-i18n="label_note">備註</label>
+                <textarea id="messageBox"></textarea>
+              </div>
+              <button id="submitButton" class="btn btn-primary full" type="submit" data-i18n="form_submit">送出預約</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <div class="container footer-inner">
         <div data-i18n="footer_left">HAN GALLERY — 為私人鑑賞與策展展示而設計。</div>
         <div>
-		  <a href="https://www.facebook.com/p/%E6%B6%B5%E7%95%AB%E5%BB%8A-61556099745504/" target="_blank" rel="noopener noreferrer">
-			Facebook
-		  </a>
-		  · 聯絡 · 預約制
-		</div>
-		<div>Copyright © Wu Chuanheng</div>
+          <a href="https://www.facebook.com/p/%E6%B6%B5%E7%95%AB%E5%BB%8A-61556099745504/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          · 聯絡 · 預約制
+        </div>
+        <div>Copyright © Wu Chuanheng</div>
       </div>
     </footer>
 
     <script>
       const navbar = document.getElementById("navbar");
-      const reveals = document.querySelectorAll(".reveal");
       const slides = document.querySelectorAll(".hero-slide");
       const dots = document.querySelectorAll(".hero-dot");
-      const heroVideos = document.querySelectorAll(".hero-slide video");
       const heroStage = document.querySelector(".hero-stage");
       const langButtons = document.querySelectorAll("[data-lang-switch]");
-      const counters = document.querySelectorAll(".counter");
+      const bookingForm = document.getElementById("bookingForm");
       const fullName = document.getElementById("fullName");
-      const emailAddress = document.getElementById("emailAddress");
+      const phoneNumber = document.getElementById("phoneNumber");
+      const emailOrId = document.getElementById("emailOrId");
+      const partySize = document.getElementById("partySize");
+      const gender = document.getElementById("gender");
+      const ageRange = document.getElementById("ageRange");
+      const preferredDate = document.getElementById("preferredDate");
       const preferredTime = document.getElementById("preferredTime");
-      const subjectLine = document.getElementById("subjectLine");
       const messageBox = document.getElementById("messageBox");
       const submitButton = document.getElementById("submitButton");
-	  const preferredDate = document.getElementById("preferredDate");
 
       let currentSlide = 0;
       let slideTimer = null;
@@ -1114,212 +819,174 @@
       window.addEventListener("resize", updateViewportHeight);
       window.addEventListener("orientationchange", updateViewportHeight);
 
-	const translations = {
-	  zh: {
-		nav_about: "關於",
-		nav_gallery: "畫廊",
-		nav_exhibitions: "展覽",
-		nav_news: "最新消息",
-		nav_booking: "預約",
-		reserve_btn: "立即預約",
-
-		hero_eyebrow: "私人鑑賞 · 精選體驗",
-		hero_title: "讓藝術、空間與靜謐在此相遇。",
-		hero_desc: "HAN GALLERY 以沉靜的空間節奏與精選作品呈現當代藝術，提供預約制參觀與更完整的觀展體驗。",
-		hero_cta_primary: "預約參觀",
-		hero_cta_secondary: "瀏覽藏品",
-		hero_meta_1: "高雄 · 預約制",
-		hero_meta_2: "季節性展覽",
-		hero_meta_3: "私人導覽",
-
-		about_label: "關於",
-		about_title: "用更安靜的方式體驗當代藝術。",
-		about_intro: "HAN GALLERY 致力於以更安靜、專注的方式呈現作品，讓來訪者在空間、光線與作品之間建立自然的觀看節奏。",
-		about_body_1: "這裡可以放畫廊理念、策展敘述，或一段簡短品牌故事，讓畫面與空間氛圍自然說話。",
-		stat_artists: "合作藝術家",
-		stat_rooms: "當期展區",
-		stat_access_value: "私人參觀",
-		stat_access: "私人參觀",
-		about_body_2: "也可放入創辦理念、展覽意圖、收藏亮點或空間故事，讓網站維持高級感而不流於制式企業官網。",
-
-		gallery_label: "精選藏品",
-		gallery_title: "用滑動的方式瀏覽分層視覺敘事。",
-		gallery_intro: "這段採用堆疊式視覺節奏，讓瀏覽更有沉浸感，也更貼近畫廊首頁該有的觀看體驗。",
-
-		exhibitions_label: "展覽",
-		exhibitions_title: "當期與即將到來的展示。",
-		exhibitions_intro: "這裡可放目前展覽、私人活動、限量發表，或藝術家專屬展間。",
-
-		news_label: "最新消息",
-		news_title: "公告、發佈與編輯式短訊。",
-		news_intro: "首頁的最新消息建議保持精簡，放兩到三則即可。",
-
-		booking_label: "預約",
-		booking_title: "預約一場私人鑑賞。",
-		booking_intro: "請留下您的預約日期與聯絡方式，我們將於確認後主動與您聯繫。",
-		booking_hours: "開放時間",
-		booking_location: "地點",
-		booking_email_label: "郵箱",
-		booking_phone_label: "聯絡",
-		booking_phone_value: "0933943411",
-
-		footer_left: "HAN GALLERY — 為私人鑑賞與策展展示而設計。",
-		footer_right: "Facebook · 聯絡 · 預約制",
-
-		form_name: "姓名",
-		form_email: "Email",
-		form_preferred: "偏好時段",
-		form_subject: "主題 / 展覽",
-		form_message: "留言或備註",
-		form_submit: "送出預約",
-		alert_text: "感謝您的預約，我們將盡快與您聯繫。"
-	  },
-
-	  en: {
-		nav_about: "About",
-		nav_gallery: "Gallery",
-		nav_exhibitions: "Exhibitions",
-		nav_news: "News",
-		nav_booking: "Booking",
-		reserve_btn: "Reserve",
-
-		hero_eyebrow: "Private Viewing · Curated Experience",
-		hero_title: "Where art, space, and quiet presence meet.",
-		hero_desc: "HAN GALLERY presents contemporary art through a calm spatial rhythm and curated works, offering reservation-only visits and a more focused viewing experience.",
-		hero_cta_primary: "Book a Visit",
-		hero_cta_secondary: "View Collection",
-		hero_meta_1: "Kaohsiung · Reservation Only",
-		hero_meta_2: "Seasonal Exhibitions",
-		hero_meta_3: "Private Guided Viewing",
-
-		about_label: "About",
-		about_title: "A quieter way to experience contemporary art.",
-		about_intro: "HAN GALLERY is designed to present art in a quieter, more attentive setting, allowing visitors to move naturally through space, light, and works.",
-		about_body_1: "This section can hold your gallery philosophy, curatorial statement, or a short brand narrative in a restrained and elegant tone.",
-		stat_artists: "Featured artists",
-		stat_rooms: "Current rooms",
-		stat_access_value: "Private access",
-		stat_access: "Private access",
-		about_body_2: "You may also place founder notes, exhibition intent, or collection highlights here without making the site feel too corporate.",
-
-		gallery_label: "Featured Collection",
-		gallery_title: "Scroll through a layered visual sequence.",
-		gallery_intro: "This section is designed to feel immersive and cinematic rather than like a regular image grid.",
-
-		exhibitions_label: "Exhibitions",
-		exhibitions_title: "Current and upcoming presentations.",
-		exhibitions_intro: "Use this area for current exhibitions, private events, curated launches, or artist-specific rooms.",
-
-		news_label: "Latest News",
-		news_title: "Announcements, releases, and editorial notes.",
-		news_intro: "Keep this section concise. Two or three updates are usually enough.",
-
-		booking_label: "Reservation",
-		booking_title: "Book a private viewing.",
-		booking_intro: "Please leave your preferred date and contact details. We will confirm your reservation with you directly.",
-		booking_hours: "Hours",
-		booking_location: "Location",
-		booking_email_label: "Email",
-		booking_phone_label: "Phone",
-		booking_phone_value: "(+886)933943411",
-
-		footer_left: "HAN GALLERY — Designed for private viewing and curated presentation.",
-		footer_right: "Facebook · Contact · Reservation only",
-
-		form_name: "Full name",
-		form_email: "Email address",
-		form_preferred: "Preferred time",
-		form_subject: "Subject / Exhibition",
-		form_message: "Message or notes",
-		form_submit: "Submit Reservation",
-		alert_text: "Thank you for your reservation. We will contact you shortly."
-	  },
-
-	  ja: {
-		nav_about: "概要",
-		nav_gallery: "ギャラリー",
-		nav_exhibitions: "展示",
-		nav_news: "ニュース",
-		nav_booking: "予約",
-		reserve_btn: "予約する",
-
-		hero_eyebrow: "プライベートビューイング · キュレーション体験",
-		hero_title: "芸術、空間、静けさが出会う場所。",
-		hero_desc: "HAN GALLERY は、静かな空間のリズムと厳選された作品を通じて、予約制ならではの落ち着いた鑑賞体験を提供します。",
-		hero_cta_primary: "来場を予約",
-		hero_cta_secondary: "コレクションを見る",
-		hero_meta_1: "高雄 · 完全予約制",
-		hero_meta_2: "季節展示",
-		hero_meta_3: "プライベートガイド",
-
-		about_label: "概要",
-		about_title: "より静かな方法で現代アートを体験する。",
-		about_intro: "HAN GALLERY は、空間・光・作品の関係を自然に感じられる、静かで集中しやすい鑑賞環境を目指しています。",
-		about_body_1: "ここにはギャラリーの理念、キュレーションステートメント、または短いブランドストーリーを上品なトーンで入れられます。",
-		stat_artists: "参加アーティスト",
-		stat_rooms: "展示室",
-		stat_access_value: "限定案内",
-		stat_access: "プライベート入場",
-		about_body_2: "創設者の想い、展示意図、コレクションの見どころなどを加えることで、サイトの完成度を高められます。",
-
-		gallery_label: "注目コレクション",
-		gallery_title: "重層的なビジュアルをスクロールで体験。",
-		gallery_intro: "このセクションは通常の画像一覧よりも、没入感のある閲覧体験になるよう設計されています。",
-
-		exhibitions_label: "展示",
-		exhibitions_title: "現在開催中と今後の展示。",
-		exhibitions_intro: "現在の展示、プライベートイベント、限定公開、アーティスト別展示などを配置できます。",
-
-		news_label: "最新情報",
-		news_title: "お知らせ、リリース、エディトリアルノート。",
-		news_intro: "このセクションは簡潔に、2〜3件ほどに絞るのがおすすめです。",
-
-		booking_label: "予約",
-		booking_title: "プライベートビューイングを予約。",
-		booking_intro: "ご希望日時とご連絡先をご記入ください。確認後、こちらからご連絡いたします。",
-		booking_hours: "営業時間",
-		booking_location: "所在地",
-		booking_email_label: "メール",
-		booking_phone_label: "電話",
-		booking_phone_value: "(+886)933943411",
-
-		footer_left: "HAN GALLERY — プライベートビューイングとキュレーション展示のためのデザイン。",
-		footer_right: "Facebook · お問い合わせ · 完全予約制",
-
-		form_name: "お名前",
-		form_email: "メールアドレス",
-		form_preferred: "希望時間",
-		form_subject: "件名 / 展示名",
-		form_message: "メッセージや備考",
-		form_submit: "予約を送信",
-		alert_text: "ご予約ありがとうございます。確認後、こちらからご連絡いたします。"
-	  }
-	};
-
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
-          });
+      const translations = {
+        zh: {
+          nav_about: "關於",
+          nav_gallery: "畫廊",
+          nav_exhibitions: "展覽",
+          nav_news: "最新消息",
+          nav_booking: "預約",
+          reserve_btn: "立即預約",
+          hero_eyebrow: "私人鑑賞・精選體驗",
+          hero_title: "讓藝術、空間與靜謐在此相遇。",
+          hero_desc: "HAN GALLERY 以沉靜的空間節奏與精選作品呈現當代藝術，現在可直接填寫線上預約表單，我們將依預約資訊與您確認參觀時段。",
+          hero_cta_primary: "立即預約",
+          hero_cta_secondary: "查看預約資訊",
+          hero_meta_1: "高雄・預約制",
+          hero_meta_2: "週六、週日開放",
+          hero_meta_3: "09:30 / 10:30 / 13:00",
+          booking_label: "預約",
+          booking_title: "線上預約",
+          booking_intro: "請填寫主要聯絡人資料、參觀人數與預約時段。若無 Email，請於 Email / 身分證字號欄填寫身分證字號。",
+          booking_hours: "開放時間",
+          booking_hours_value: "週六、週日 / 09:30 起，看到展覽結束為止",
+          booking_time_slots: "可選時段",
+          booking_time_slots_value: "09:30 / 10:30 / 13:00",
+          booking_location: "地點",
+          booking_location_value: "Kaohsiung City / Reservation only",
+          booking_phone_label: "聯絡電話",
+          booking_helper: "若無法完成線上預約，請直接聯繫畫廊。",
+          label_name: "姓名",
+          label_phone: "聯絡電話",
+		  contact_email_label: "聯絡郵箱",
+          label_email_or_id: "Email / 身分證字號",
+          field_note_email_or_id: "若無 Email，請填寫身分證字號。",
+          label_party_size: "預約人數",
+          label_gender: "預約人性別",
+          gender_male: "男",
+          gender_female: "女",
+          gender_other: "其他",
+          label_age_range: "年齡區間",
+          label_date: "預約日期",
+          field_note_weekend: "僅開放週六、週日預約。",
+          label_time: "預約時段",
+          label_note: "備註",
+          option_choose: "請選擇",
+          form_submit: "送出預約",
+          footer_left: "HAN GALLERY — 為私人鑑賞與策展展示而設計。",
+          submit_success: "感謝您的預約，我們將盡快與您聯繫。",
+          submit_fail: "送出失敗，請稍後再試。",
+          fill_required: "請完整填寫必填欄位。",
+          weekend_only: "預約日期僅限週六或週日。"
         },
-        { threshold: 0.18 }
-      );
-      reveals.forEach((el) => revealObserver.observe(el));
+        en: {
+          nav_about: "About",
+          nav_gallery: "Gallery",
+          nav_exhibitions: "Exhibitions",
+          nav_news: "News",
+          nav_booking: "Booking",
+          reserve_btn: "Reserve",
+          hero_eyebrow: "Private Viewing · Curated Experience",
+          hero_title: "Where art, space, and quiet presence meet.",
+          hero_desc: "HAN GALLERY presents contemporary art through a calm spatial rhythm and curated works. Please complete the online booking form and we will confirm your visit with you.",
+          hero_cta_primary: "Reserve Now",
+          hero_cta_secondary: "View Booking Info",
+          hero_meta_1: "Kaohsiung · Reservation Only",
+          hero_meta_2: "Open on weekends",
+          hero_meta_3: "09:30 / 10:30 / 13:00",
+          booking_label: "Booking",
+          booking_title: "Online Reservation",
+          booking_intro: "Please complete the main contact details, party size, and preferred slot. If you do not have an email, enter your ID number in the Email / ID field.",
+          booking_hours: "Opening Hours",
+          booking_hours_value: "Saturday & Sunday / from 09:30 until the viewing ends",
+          booking_time_slots: "Available Slots",
+          booking_time_slots_value: "09:30 / 10:30 / 13:00",
+          booking_location: "Location",
+          booking_location_value: "Kaohsiung City / Reservation only",
+          booking_phone_label: "Phone",
+          booking_helper: "If you cannot complete the online reservation, please contact the gallery directly.",
+          label_name: "Full name",
+          label_phone: "Phone number",
+		  contact_email_label: "Contact email",
+          label_email_or_id: "Email / ID number",
+          field_note_email_or_id: "If you do not have an email, enter your ID number.",
+          label_party_size: "Party size",
+          label_gender: "Gender",
+          gender_male: "Male",
+          gender_female: "Female",
+          gender_other: "Other",
+          label_age_range: "Age range",
+          label_date: "Preferred date",
+          field_note_weekend: "Weekend bookings only.",
+          label_time: "Preferred time",
+          label_note: "Notes",
+          option_choose: "Please choose",
+          form_submit: "Submit Reservation",
+          footer_left: "HAN GALLERY — Designed for private viewing and curated presentation.",
+          submit_success: "Thank you. Your reservation has been submitted.",
+          submit_fail: "Submission failed. Please try again later.",
+          fill_required: "Please complete all required fields.",
+          weekend_only: "Reservations are limited to Saturdays and Sundays."
+        },
+        ja: {
+          nav_about: "概要",
+          nav_gallery: "ギャラリー",
+          nav_exhibitions: "展示",
+          nav_news: "最新情報",
+          nav_booking: "予約",
+          reserve_btn: "今すぐ予約",
+          hero_eyebrow: "プライベートビューイング・厳選体験",
+          hero_title: "芸術、空間、静けさが出会う場所。",
+          hero_desc: "HAN GALLERY は、静かな空間のリズムと厳選作品を通じて現代アートを紹介します。オンライン予約フォームをご記入いただければ、こちらから確認のご連絡をいたします。",
+          hero_cta_primary: "今すぐ予約",
+          hero_cta_secondary: "予約案内を見る",
+          hero_meta_1: "高雄・完全予約制",
+          hero_meta_2: "土日開放",
+          hero_meta_3: "09:30 / 10:30 / 13:00",
+          booking_label: "予約",
+          booking_title: "オンライン予約",
+          booking_intro: "代表連絡先、人数、希望時間をご記入ください。メールアドレスがない場合は、Email / 身分証番号欄に身分証番号をご入力ください。",
+          booking_hours: "開放時間",
+          booking_hours_value: "土曜・日曜 / 09:30 開始、鑑賞終了まで",
+          booking_time_slots: "選択可能時間",
+          booking_time_slots_value: "09:30 / 10:30 / 13:00",
+          booking_location: "場所",
+          booking_location_value: "Kaohsiung City / Reservation only",
+          booking_phone_label: "電話番号",
+          booking_helper: "オンライン予約が完了できない場合は、直接ギャラリーまでご連絡ください。",
+          label_name: "お名前",
+          label_phone: "電話番号",
+		  contact_email_label: "連絡メール",
+          label_email_or_id: "Email / 身分証番号",
+          field_note_email_or_id: "メールアドレスがない場合は、身分証番号をご入力ください。",
+          label_party_size: "予約人数",
+          label_gender: "性別",
+          gender_male: "男性",
+          gender_female: "女性",
+          gender_other: "その他",
+          label_age_range: "年齢層",
+          label_date: "予約日",
+          field_note_weekend: "土日予約のみ対応しています。",
+          label_time: "予約時間",
+          label_note: "備考",
+          option_choose: "選択してください",
+          form_submit: "予約を送信",
+          footer_left: "HAN GALLERY — プライベートビューイングと展示のために設計。",
+          submit_success: "ご予約ありがとうございます。確認後ご連絡いたします。",
+          submit_fail: "送信に失敗しました。しばらくしてから再度お試しください。",
+          fill_required: "必須項目をすべて入力してください。",
+          weekend_only: "予約日は土曜または日曜のみです。"
+        }
+      };
+
+      function setLanguage(lang) {
+        document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
+        document.documentElement.dataset.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.dataset.i18n;
+          if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key];
+        });
+        langButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.langSwitch === lang));
+      }
+
+      langButtons.forEach((btn) => {
+        btn.addEventListener("click", () => setLanguage(btn.dataset.langSwitch));
+      });
 
       function showSlide(index) {
         const normalizedIndex = (index + slides.length) % slides.length;
         slides.forEach((slide, i) => slide.classList.toggle("active", i === normalizedIndex));
         dots.forEach((dot, i) => dot.classList.toggle("active", i === normalizedIndex));
-
-        heroVideos.forEach((video) => {
-          try {
-            video.pause();
-            video.currentTime = 0;
-          } catch (_) {}
-        });
-
-        const activeVideo = slides[normalizedIndex].querySelector("video");
-        if (activeVideo) activeVideo.play().catch(() => {});
         currentSlide = normalizedIndex;
       }
 
@@ -1334,13 +1001,6 @@
           slideTimer = null;
         }
       }
-
-      dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          showSlide(Number(dot.dataset.slide));
-          startSlider();
-        });
-      });
 
       function beginDrag(event) {
         pointerTracking = true;
@@ -1360,7 +1020,6 @@
         if (!pointerTracking) return;
         pointerTracking = false;
         heroStage.classList.remove("is-dragging");
-
         const diffY = event.clientY - pointerStartY;
         const threshold = 50;
         if (Math.abs(pointerDiffX) > Math.abs(diffY) && Math.abs(pointerDiffX) > threshold) {
@@ -1368,6 +1027,13 @@
         }
         startSlider();
       }
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          showSlide(Number(dot.dataset.slide));
+          startSlider();
+        });
+      });
 
       heroStage.addEventListener("pointerdown", beginDrag);
       heroStage.addEventListener("pointermove", moveDrag);
@@ -1381,120 +1047,70 @@
         if (!pointerTracking) startSlider();
       });
 
-      function formatCounterValue(value, counterEl) {
-        const prefix = counterEl.dataset.counterPrefix || "";
-        const suffix = counterEl.dataset.counterSuffix || "";
-        const useLeadingZero = prefix === "0" && value < 10;
-        const resolvedPrefix = useLeadingZero ? "0" : prefix === "0" ? "" : prefix;
-        return `${resolvedPrefix}${value}${suffix}`;
+      function isWeekend(dateString) {
+        const date = new Date(`${dateString}T00:00:00`);
+        const day = date.getDay();
+        return day === 0 || day === 6;
       }
 
-      function animateCounter(counterEl) {
-        if (counterEl.dataset.animated === "true") return;
-        counterEl.dataset.animated = "true";
-        counterEl.style.opacity = "1";
-        counterEl.style.transform = "translateY(0)";
+      preferredDate.addEventListener("change", () => {
+        if (preferredDate.value && !isWeekend(preferredDate.value)) {
+          alert(translations[document.documentElement.dataset.lang].weekend_only);
+          preferredDate.value = "";
+        }
+      });
 
-        const target = Number(counterEl.dataset.counterTarget || 0);
-        const duration = 1600;
-        const startTime = performance.now();
+      bookingForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const lang = document.documentElement.dataset.lang || "zh";
 
-        function update(now) {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 4);
-          const current = Math.round(target * eased);
-          counterEl.textContent = formatCounterValue(current, counterEl);
-          if (progress < 1) {
-            requestAnimationFrame(update);
-          } else {
-            counterEl.textContent = formatCounterValue(target, counterEl);
-          }
+        if (!fullName.value.trim() || !phoneNumber.value.trim() || !emailOrId.value.trim() || !partySize.value || !gender.value || !ageRange.value || !preferredDate.value || !preferredTime.value) {
+          alert(translations[lang].fill_required);
+          return;
         }
 
-        requestAnimationFrame(update);
-      }
+        if (!isWeekend(preferredDate.value)) {
+          alert(translations[lang].weekend_only);
+          return;
+        }
 
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) animateCounter(entry.target);
-          });
-        },
-        { threshold: 0.55 }
-      );
-      counters.forEach((counter) => counterObserver.observe(counter));
-
-      function setLanguage(lang) {
-        document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
-        document.documentElement.dataset.lang = lang;
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-          const key = el.dataset.i18n;
-          if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
+        const payload = new URLSearchParams({
+          fullName: fullName.value.trim(),
+          phoneNumber: phoneNumber.value.trim(),
+          emailOrId: emailOrId.value.trim(),
+          partySize: partySize.value,
+          gender: gender.value,
+          ageRange: ageRange.value,
+          preferredDate: preferredDate.value,
+          preferredTime: preferredTime.value,
+          messageBox: messageBox.value.trim()
         });
-        fullName.placeholder = translations[lang].form_name;
-        emailAddress.placeholder = translations[lang].form_email;
-        preferredTime.options[0].textContent = translations[lang].form_preferred;
-        subjectLine.placeholder = translations[lang].form_subject;
-        messageBox.placeholder = translations[lang].form_message;
-        submitButton.textContent = translations[lang].form_submit;
-        langButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.langSwitch === lang));
-      }
 
-      langButtons.forEach((btn) => {
-        btn.addEventListener("click", () => setLanguage(btn.dataset.langSwitch));
+        try {
+          await fetch("https://script.google.com/macros/s/AKfycbxZswbcONRTA_siQfLNa9eSt5y6aqML4Tc0CzUxX_gaLm-y67dE2BoTpheGjRGxCloh/exec", {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: payload.toString()
+          });
+
+          alert(translations[lang].submit_success);
+          bookingForm.reset();
+        } catch (error) {
+          console.error(error);
+          alert(translations[lang].submit_fail);
+        }
       });
 
       window.addEventListener("scroll", () => {
         navbar.classList.toggle("scrolled", window.scrollY > 24);
       });
 
-	document.querySelector("form").addEventListener("submit", async (event) => {
-	  event.preventDefault();
-
-	  const payload = new URLSearchParams({
-		fullName: fullName.value.trim(),
-		emailAddress: emailAddress.value.trim(),
-		preferredDate: preferredDate.value,
-		preferredTime: preferredTime.value,
-		subjectLine: subjectLine.value.trim(),
-		messageBox: messageBox.value.trim()
-	  });
-
-	  if (!fullName.value.trim() || !emailAddress.value.trim() || !preferredDate.value || !preferredTime.value) {
-		alert("請先填寫姓名、Email、日期與時段");
-		return;
-	  }
-
-	  try {
-		await fetch("https://script.google.com/macros/s/AKfycbxZswbcONRTA_siQfLNa9eSt5y6aqML4Tc0CzUxX_gaLm-y67dE2BoTpheGjRGxCloh/exec", {
-		  method: "POST",
-		  mode: "no-cors",
-		  headers: {
-			"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-		  },
-		  body: payload.toString()
-		});
-
-		alert(translations[document.documentElement.dataset.lang].alert_text);
-		event.target.reset();
-	  } catch (error) {
-		console.error(error);
-		alert("送出失敗，請稍後再試");
-	  }
-	});
-
       setLanguage("zh");
-      counters.forEach((counter) => {
-        counter.textContent = formatCounterValue(0, counter);
-      });
       showSlide(0);
       startSlider();
-
-      console.assert(document.doctype && document.doctype.name === "html", "Document should start with a valid doctype");
-      console.assert(typeof formatCounterValue === "function", "Counter helper should exist");
-      console.assert(typeof setLanguage === "function", "setLanguage should exist");
     </script>
   </body>
 </html>
