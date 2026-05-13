@@ -1047,18 +1047,17 @@
         if (!pointerTracking) startSlider();
       });
 
-      function isWeekend(dateString) {
-        const date = new Date(`${dateString}T00:00:00`);
-        const day = date.getDay();
-        return day === 0 || day === 6;
-      }
+		function isWeekend(dateString) {
+		  if (!dateString) return false;
 
-      preferredDate.addEventListener("change", () => {
-        if (preferredDate.value && !isWeekend(preferredDate.value)) {
-          alert(translations[document.documentElement.dataset.lang].weekend_only);
-          preferredDate.value = "";
-        }
-      });
+		  const [year, month, day] = dateString.split("-").map(Number);
+		  const date = new Date(year, month - 1, day);
+		  const weekday = date.getDay();
+
+		  return weekday === 0 || weekday === 6;
+		}
+
+      
 
       bookingForm.addEventListener("submit", async (event) => {
         event.preventDefault();
